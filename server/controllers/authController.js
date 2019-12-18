@@ -40,5 +40,10 @@ module.exports = {
       };
       return res.send(req.session.user);
     }
+  },
+
+  logout: (req, res) => {
+    req.session.destroy();
+    return res.sendStatus(200);
   }
 }
